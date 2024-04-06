@@ -1,8 +1,13 @@
+"use client"
+
+import useChangeTheme from "@/hooks/useChangeTheme";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./button";
 
 export default function Header() {
+  const { iconChoosed, changeTheme } = useChangeTheme()
+
   return (
     <header className="fixed z-10 w-full items-center justify-between lg:flex bg-gray/50 backdrop-blur-xl px-10 py-4">
       <Image
@@ -29,10 +34,12 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <Image
-            src="/icon-sun.svg"
+            src={iconChoosed}
             alt="icon-sun"
             width={28}
             height={28}
+            className="cursor-pointer"
+            onClick={changeTheme}
           />
           <Link
             href="https://drive.google.com/drive/folders/1dpdhHbJuphtHZtqEvlKeeX4Vg0drOYAw"

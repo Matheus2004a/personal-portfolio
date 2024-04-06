@@ -1,6 +1,7 @@
 import { AboutMe } from "@/components/about-me";
 import Header from "@/components/header";
 import { Skills } from "@/components/skills";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
 
       <main className="flex flex-col gap-12 pt-10">
         <AboutMe />
-        <Skills />
+        <Suspense fallback={<h3>Loading...</h3>}>
+          <Skills />
+        </Suspense>
       </main>
     </>
   );

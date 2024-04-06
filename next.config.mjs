@@ -14,7 +14,14 @@ const nextConfig = {
         port: '',
         pathname: '/Matheus2004a.png/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'vskcxxcaqkvcrcscjinc.supabase.co',
+        port: '',
+        pathname: '/storage/**',
+      },
     ],
+    dangerouslyAllowSVG: true,
   },
 };
 
