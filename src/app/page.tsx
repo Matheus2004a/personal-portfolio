@@ -1,6 +1,7 @@
 import { AboutMe } from "@/components/about-me";
 import { Expirences } from "@/components/expirences";
 import Header from "@/components/header";
+import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
 import { Suspense } from "react";
 
@@ -17,6 +18,8 @@ export default function Home() {
         <Suspense fallback={<h3>Loading...</h3>}>
           <Expirences />
         </Suspense>
+
+        <Projects />
       </main>
     </>
   );

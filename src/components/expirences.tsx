@@ -22,7 +22,7 @@ export async function Expirences() {
           <div key={expirence.id} className="max-w-[900px] w-full grid gap-4 bg-white shadow-lg p-8">
             <figure className="flex items-center gap-2">
               <Image
-                src={expirence.company_url || "/no-image.svg"}
+                src={expirence.company_url}
                 alt={expirence.company_name}
                 width={40}
                 height={40}
