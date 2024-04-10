@@ -4,6 +4,8 @@ import Header from "@/components/header";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
 import { Suspense } from "react";
+import { Toaster } from 'react-hot-toast';
+import { Contact } from "./contact";
 
 export default function Home() {
   return (
@@ -20,6 +22,9 @@ export default function Home() {
         </Suspense>
 
         <Projects />
+        <Contact />
+
+        <Toaster />
       </main>
     </>
   );

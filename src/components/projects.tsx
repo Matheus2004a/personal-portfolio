@@ -23,7 +23,7 @@ export function Projects() {
           <Card className="w-3/4" key={project.id}>
             <CardHeader>
               <CardTitle>
-                <Link href={project.html_url}>
+                <Link href={project.html_url} target="_blank">
                   {project.name}
                 </Link>
               </CardTitle>
@@ -32,22 +32,24 @@ export function Projects() {
             <CardContent>
               <p>{project.description}</p>
 
-              <div className="flex gap-2 mt-6">
-                {project.topics.map((icon, index) => (
-                  <StackLabels
-                    key={index}
-                    itemTopics={icon}
-                    className="bg-gray-200 rounded-xl px-5 py-1"
-                  />
-                ))}
-              </div>
+              {project.topics.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {project.topics.map((icon, index) => (
+                    <StackLabels
+                      key={index}
+                      itemTopics={icon}
+                      className="bg-gray-200 rounded-xl px-5 py-1"
+                    />
+                  ))}
+                </div>
+              )}
             </CardContent>
 
             <CardFooter>
               <Link href={project.homepage} target="_blank">
                 <Image
                   src="/icon-homepage.svg"
-                  alt="icon-website"
+                  alt="icon-homepage"
                   width={36}
                   height={36}
                 />

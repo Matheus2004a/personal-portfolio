@@ -42,8 +42,7 @@ export default function Header() {
             onClick={changeTheme}
           />
           <Link
-            href="https://drive.google.com/drive/folders/1dpdhHbJuphtHZtqEvlKeeX4Vg0drOYAw"
-            download
+            href="https://drive.google.com/file/d/12IC-yvspgN3v6NbffulMPC3GHKcvhD8j/view?usp=sharing"
             target="_blank"
           >
             <Button type="button" className="rounded-xl font-bold">

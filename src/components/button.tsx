@@ -6,5 +6,5 @@ interface ButtonProps extends ComponentProps<"button"> {
 }
 
 export function Button({ type, className, children }: ButtonProps) {
-  return <ButtonDemo className={className}>{children}</ButtonDemo>
+  return <ButtonDemo type={type} className={className}>{children}</ButtonDemo>
 }
