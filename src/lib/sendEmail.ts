@@ -1,7 +1,6 @@
 "use server"
 
 import { ContactData } from "@/validations/schemaContact";
-import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function sendEmail(data: ContactData) {
@@ -22,24 +21,5 @@ export async function sendEmail(data: ContactData) {
     html: data.textarea
   }
 
-  try {
-    const result = await transporter.verify()
-    console.log("SMTP result:", result)
-
-    NextResponse.json({ success: true, message: "Email enviado com sucesso" })
-  } catch (error: any) {
-    NextResponse.json({ success: false, message: error.message })
-    console.error(error)
-    return
-  }
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      NextResponse.json({ success: false, message: error.message })
-      console.error(error)
-      return
-    }
-
-    console.log(info)
-  })
+  await transporter.sendMail(mailOptions)
 }

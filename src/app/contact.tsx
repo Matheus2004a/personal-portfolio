@@ -6,6 +6,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import useContact from "@/hooks/useContact";
+import { formatTelephone } from "@/utils/formatTelephone";
 
 export function Contact() {
   const { form, errors, onSubmit } = useContact()
@@ -45,9 +46,29 @@ export function Contact() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Digite seu email" {...field} />
+                    <Input type="email" placeholder="Digite seu email" {...field} />
                   </FormControl>
                   <FormMessage>{errors.email?.message}</FormMessage>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="telephone"
+              defaultValue=""
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Telefone</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="tel"
+                      placeholder="Digite seu telefone"
+                      {...field}
+                      onChange={field.onChange}
+                      value={formatTelephone(field.value)}
+                    />
+                  </FormControl>
+                  <FormMessage>{errors.telephone?.message}</FormMessage>
                 </FormItem>
               )}
             />

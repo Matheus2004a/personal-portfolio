@@ -13,6 +13,7 @@ export default function useContact() {
     try {
       await sendEmail(values)
       toast.success("Email enviado com sucesso")
+      form.reset()
     } catch (error: any) {
       toast.error(error.message)
     }
@@ -21,6 +22,6 @@ export default function useContact() {
   return {
     form,
     errors: form.formState.errors,
-    onSubmit
+    onSubmit,
   }
 }
