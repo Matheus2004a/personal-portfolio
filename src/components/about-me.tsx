@@ -36,8 +36,8 @@ export function AboutMe() {
         src="https://github.com/Matheus2004a.png"
         alt="user-icon"
         width={280}
-        height={320}
-        className="rounded-lg"
+        height={280}
+        className="rounded-lg w-[280px] h-[280px] object-cover"
       />
     </section >
   )

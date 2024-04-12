@@ -16,19 +16,17 @@ export async function Skills() {
         <p>As habilidades, ferramentas e tecnologias nas quais sou realmente bom:</p>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center max-w-screen-xl">
+      <div className="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">
         {skills?.map((skill) => (
-          <figure key={skill.id} className="p-4 flex flex-col gap-2 items-center w-1/4 sm:w-1/6">
-            <div className="w-full h-20 flex items-center justify-center cursor-pointer">
-              <Image
-                src={skill.url_skill}
-                alt={skill.name}
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
-            <figcaption>{skill.name}</figcaption>
+          <figure key={skill.id} className="flex flex-col items-center gap-2">
+            <Image
+              src={skill.url_skill}
+              alt={skill.name}
+              width={64}
+              height={64}
+              className="transition-transform duration-300 md:hover:scale-110 cursor-pointer w-16 h-16"
+            />
+            <figcaption className="text-base md:text-lg">{skill.name}</figcaption>
           </figure>
         ))}
       </div>
