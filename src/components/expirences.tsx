@@ -12,9 +12,9 @@ export async function Expirences() {
     <section className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
       <div className="grid place-items-center gap-4">
         <BadgeDemo className="w-fit">
-          <h2>Expirence</h2>
+          <h2>Experiência</h2>
         </BadgeDemo>
-        <p>Here is a quick summary of my most recent experiences:</p>
+        <p>Aqui está um rápido resumo das minhas experiências mais recentes:</p>
       </div>
 
       <div className="flex flex-col flex-wrap justify-center items-center max-w-screen-xl gap-12">

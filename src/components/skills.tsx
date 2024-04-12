@@ -11,15 +11,15 @@ export async function Skills() {
     <section className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
       <div className="grid place-items-center gap-4">
         <BadgeDemo className="w-fit">
-          <h2>Skills</h2>
+          <h2>Habilidades</h2>
         </BadgeDemo>
-        <p>The skills, tools and technologies I am really good at:</p>
+        <p>As habilidades, ferramentas e tecnologias nas quais sou realmente bom:</p>
       </div>
 
       <div className="flex flex-wrap justify-center items-center max-w-screen-xl">
         {skills?.map((skill) => (
           <figure key={skill.id} className="p-4 flex flex-col gap-2 items-center w-1/4 sm:w-1/6">
-            <div className="w-full h-20 flex items-center justify-center">
+            <div className="w-full h-20 flex items-center justify-center cursor-pointer">
               <Image
                 src={skill.url_skill}
                 alt={skill.name}

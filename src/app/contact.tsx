@@ -12,17 +12,18 @@ export function Contact() {
   const { form, errors, onSubmit } = useContact()
 
   return (
-    <section className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
+    <section id="contact" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
       <div className="grid place-items-center gap-4">
         <BadgeDemo className="w-fit">
-          <h2>Get in touch</h2>
+          <h2>Contato</h2>
         </BadgeDemo>
-        <p>What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.</p>
+        <p className="max-w-xl text-center">
+          Entre em contato comigo se estiver procurando um desenvolvedor, tiver alguma demanda ou simplesmente quiser se conectar.
+        </p>
       </div>
 
       <Form {...form}>
         <div className="flex flex-col justify-center items-center gap-5">
-          <h2>Entre em contato comigo</h2>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-1/2 space-y-8">
             <FormField
               control={form.control}

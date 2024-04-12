@@ -10,12 +10,12 @@ export function Projects() {
   const projects = useGitHubAutomatedRepos("Matheus2004a", "deploy");
 
   return (
-    <section className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
+    <section id="work" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
       <div className="grid place-items-center gap-4">
         <BadgeDemo className="w-fit">
-          <h2>Work</h2>
+          <h2>Projetos</h2>
         </BadgeDemo>
-        <p>Some of the noteworthy projects I have built:</p>
+        <p>Alguns dos projetos notáveis ​​que construí:</p>
       </div>
 
       <div className="flex flex-wrap justify-center items-center max-w-screen-xl gap-12">

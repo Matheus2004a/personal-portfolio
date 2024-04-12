@@ -21,14 +21,14 @@ export default function Header() {
 
       <nav className="flex gap-12 items-center justify-between">
         <ul className="flex gap-6">
-          <Link href="/about">
-            <li>About</li>
+          <Link href="#about">
+            <li>Sobre</li>
           </Link>
-          <Link href="/work">
-            <li>Work</li>
+          <Link href="#work">
+            <li>Trabalhos</li>
           </Link>
-          <Link href="/contact">
-            <li>Contact</li>
+          <Link href="#contact">
+            <li>Contato</li>
           </Link>
         </ul>
 
