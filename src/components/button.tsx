@@ -5,6 +5,14 @@ interface ButtonProps extends ComponentProps<"button"> {
   children: React.ReactNode
 }
 
-export function Button({ type, className, children }: ButtonProps) {
-  return <ButtonDemo type={type} className={className}>{children}</ButtonDemo>
+export function Button({ type, className, disabled, children }: ButtonProps) {
+  return (
+    <ButtonDemo
+      type={type}
+      className={className}
+      disabled={disabled}
+    >
+      {children}
+    </ButtonDemo>
+  )
 }

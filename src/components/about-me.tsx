@@ -1,5 +1,5 @@
+import { MapPin } from "lucide-react"
 import Image from "next/image"
-import { LocationIcon } from "./icons/LocationIcon"
 
 export function AboutMe() {
   return (
@@ -12,7 +12,7 @@ export function AboutMe() {
 
         <div className="flex flex-col gap-2">
           <figure className="flex items-center gap-2">
-            <LocationIcon className="w-6 h-6" />
+            <MapPin className="w-6 h-6" />
             <figcaption>São José dos Campos, Brazil</figcaption>
           </figure>
 

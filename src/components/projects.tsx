@@ -1,9 +1,9 @@
 "use client"
 
 import { StackLabels, useGitHubAutomatedRepos } from "github-automated-repos";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { BadgeDemo } from "./badge";
-import { HomepageIcon } from "./icons/HomepageIcon";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
 export function Projects() {
@@ -48,8 +48,8 @@ export function Projects() {
             <CardFooter>
               {project.homepage && (
                 <Link href={project.homepage} target="_blank">
-                  <HomepageIcon
-                    className="rounded-lg dark:text-gray-400 dark:hover:bg-gray-900 transition-colors duration-300"
+                  <ExternalLink
+                    className="rounded-lg dark:text-gray-400 dark:hover:bg-gray-900 transition-colors duration-300 w-9 h-9 p-1.5"
                   />
                 </Link>
               )}

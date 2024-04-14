@@ -7,9 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import useContact from "@/hooks/useContact";
 import { formatTelephone } from "@/utils/formatTelephone";
+import { Loader2 } from "lucide-react";
 
 export function Contact() {
-  const { form, errors, onSubmit } = useContact()
+  const { form, errors, onSubmit, isDisabled } = useContact()
 
   return (
     <section id="contact" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
@@ -104,7 +105,14 @@ export function Contact() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Enviar</Button>
+            <Button
+              type="submit"
+              disabled={isDisabled}
+              className="disabled:cursor-not-allowed"
+            >
+              {isDisabled && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              Enviar
+            </Button>
           </form>
         </div>
       </Form>

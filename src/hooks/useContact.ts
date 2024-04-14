@@ -19,9 +19,12 @@ export default function useContact() {
     }
   }
 
+  const isDisabled = form.formState.isSubmitting
+
   return {
     form,
     errors: form.formState.errors,
     onSubmit,
+    isDisabled,
   }
 }
