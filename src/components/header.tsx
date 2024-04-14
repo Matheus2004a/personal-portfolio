@@ -1,13 +1,10 @@
-"use client"
-
-import useChangeTheme from "@/hooks/useChangeTheme";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { SwitchTheme } from "./SwitchTheme";
 import { Button } from "./button";
 
 export default function Header() {
-  const { iconChoosed, changeTheme } = useChangeTheme()
-
   return (
     <header className="fixed z-10 w-full items-center justify-between lg:flex bg-gray/50 backdrop-blur-xl px-10 py-4">
       <Image
@@ -21,26 +18,28 @@ export default function Header() {
 
       <nav className="flex gap-12 items-center justify-between">
         <ul className="flex gap-6">
-          <Link href="#about" className="font-medium transition-colors duration-300 text-gray-500 hover:text-gray-900">
+          <Link href="#about" className={cn(
+            "font-medium transition-colors duration-300 text-gray-500 hover:text-gray-900",
+            "dark:text-gray-400 dark:hover:text-gray-300"
+          )}>
             <li>Sobre</li>
           </Link>
-          <Link href="#work" className="font-medium transition-colors duration-300 text-gray-500 hover:text-gray-900">
+          <Link href="#work" className={cn(
+            "font-medium transition-colors duration-300 text-gray-500 hover:text-gray-900",
+            "dark:text-gray-400 dark:hover:text-gray-300"
+          )}>
             <li>Trabalhos</li>
           </Link>
-          <Link href="#contact" className="font-medium transition-colors duration-300 text-gray-500 hover:text-gray-900">
+          <Link href="#contact" className={cn(
+            "font-medium transition-colors duration-300 text-gray-500 hover:text-gray-900",
+            "dark:text-gray-400 dark:hover:text-gray-300"
+          )}>
             <li>Contato</li>
           </Link>
         </ul>
 
         <div className="flex items-center gap-4">
-          <Image
-            src={iconChoosed}
-            alt="icon-sun"
-            width={28}
-            height={28}
-            className="cursor-pointer"
-            onClick={changeTheme}
-          />
+          <SwitchTheme />
           <Link
             href="https://drive.google.com/file/d/12IC-yvspgN3v6NbffulMPC3GHKcvhD8j/view?usp=sharing"
             target="_blank"

@@ -19,13 +19,14 @@ export async function Expirences() {
 
       <div className="flex flex-col flex-wrap justify-center items-center max-w-screen-xl gap-12">
         {expirences?.map((expirence) => (
-          <div key={expirence.id} className="max-w-[900px] w-full grid gap-4 rounded-xl bg-gray-50 drop-shadow-md p-8">
+          <div key={expirence.id} className="max-w-[900px] w-full grid gap-4 rounded-xl bg-gray-50 drop-shadow-md p-8 dark:bg-slate-800">
             <figure className="flex items-center gap-2">
               <Image
                 src={expirence.company_url}
                 alt={expirence.company_name}
                 width={40}
                 height={40}
+                className="rounded-sm"
               />
               <figcaption>
                 <span>{expirence.company_name}</span>

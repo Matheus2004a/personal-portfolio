@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { LocationIcon } from "./icons/LocationIcon"
 
 export function AboutMe() {
   return (
@@ -11,12 +12,7 @@ export function AboutMe() {
 
         <div className="flex flex-col gap-2">
           <figure className="flex items-center gap-2">
-            <Image
-              src="/icon-location.svg"
-              alt="icon-location"
-              width={24}
-              height={24}
-            />
+            <LocationIcon className="w-6 h-6" />
             <figcaption>São José dos Campos, Brazil</figcaption>
           </figure>
 

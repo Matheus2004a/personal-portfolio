@@ -1,9 +1,9 @@
 "use client"
 
 import { StackLabels, useGitHubAutomatedRepos } from "github-automated-repos";
-import Image from "next/image";
 import Link from "next/link";
 import { BadgeDemo } from "./badge";
+import { HomepageIcon } from "./icons/HomepageIcon";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
 export function Projects() {
@@ -20,7 +20,7 @@ export function Projects() {
 
       <div className="flex flex-wrap justify-center items-center max-w-screen-xl gap-12">
         {projects.map((project) => (
-          <Card className="w-3/4" key={project.id}>
+          <Card className="w-3/4 dark:bg-slate-800" key={project.id}>
             <CardHeader>
               <CardTitle>
                 <Link href={project.html_url} target="_blank">
@@ -38,7 +38,7 @@ export function Projects() {
                     <StackLabels
                       key={index}
                       itemTopics={icon}
-                      className="bg-gray-200 rounded-xl px-5 py-1"
+                      className="bg-gray-200 rounded-xl px-5 py-1 dark:bg-slate-700"
                     />
                   ))}
                 </div>
@@ -46,14 +46,13 @@ export function Projects() {
             </CardContent>
 
             <CardFooter>
-              <Link href={project.homepage} target="_blank">
-                <Image
-                  src="/icon-homepage.svg"
-                  alt="icon-homepage"
-                  width={36}
-                  height={36}
-                />
-              </Link>
+              {project.homepage && (
+                <Link href={project.homepage} target="_blank">
+                  <HomepageIcon
+                    className="rounded-lg dark:text-gray-400 dark:hover:bg-gray-900 transition-colors duration-300"
+                  />
+                </Link>
+              )}
             </CardFooter>
           </Card>
         ))}
