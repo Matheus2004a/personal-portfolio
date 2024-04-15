@@ -9,24 +9,54 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      tbl_expirences: {
+        Row: {
+          company_name: string
+          company_url: string | null
+          description: string
+          ended_at: string | null
+          id: string
+          job_name: string
+          started_at: string
+        }
+        Insert: {
+          company_name: string
+          company_url?: string | null
+          description: string
+          ended_at?: string | null
+          id?: string
+          job_name: string
+          started_at: string
+        }
+        Update: {
+          company_name?: string
+          company_url?: string | null
+          description?: string
+          ended_at?: string | null
+          id?: string
+          job_name?: string
+          started_at?: string
+        }
+        Relationships: []
+      }
       tbl_skills: {
         Row: {
           created_at: string
           id: string
           name: string
-          url_skill: string | null
+          url_skill: string
         }
         Insert: {
           created_at: string
           id?: string
           name: string
-          url_skill?: string | null
+          url_skill: string
         }
         Update: {
           created_at?: string
           id?: string
           name?: string
-          url_skill?: string | null
+          url_skill?: string
         }
         Relationships: []
       }

@@ -1,4 +1,4 @@
-export function formatDate(date: Date, locale = "pt-BR") {
+export function formatDate(date: string | null, locale = "pt-BR") {
   if (!date) {
     return "Presente"
   }
