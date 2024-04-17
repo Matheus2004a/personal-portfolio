@@ -1,10 +1,14 @@
+import { cn } from "@/lib/utils"
 import { MapPin } from "lucide-react"
 import Image from "next/image"
 
 export function AboutMe() {
   return (
-    <section id="about" className="max-w-5xl w-full flex gap-12 py-16 md:py-20 2xl:py-24">
-      <div className="grid gap-12">
+    <section id="about" className={cn(
+      "max-w-5xl w-full lg:grid lg:grid-cols-2 gap-12 py-16 md:py-20 2xl:py-24",
+      "px-8 flex flex-col-reverse place-items-center"
+    )}>
+      <div className="grid gap-12 sm:gap-8">
         <h1 className="text-2xl font-bold">Apresentação</h1>
         <p>
           Sou um desenvolvedor frontend (React.js/Next.js) com foco na criação de experiências digitais que sejam rápidas, acessíveis, visualmente atraentes e responsivas. Dependendo da sua demanda posso atuar como fullstack também, pois já realizei alguns trabalhos (freelas) como um.
@@ -33,7 +37,7 @@ export function AboutMe() {
         alt="user-icon"
         width={280}
         height={280}
-        className="rounded-lg w-[280px] h-[280px] object-cover"
+        className="rounded-lg w-full h-[300px] object-cover lg:w-[280px] lg:h-[280px]"
       />
     </section >
   )

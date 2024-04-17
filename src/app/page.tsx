@@ -1,8 +1,8 @@
-import { AboutMe } from "@/components/about-me";
-import { Expirences } from "@/components/expirences";
+import { AboutMe } from "@/app/about-me";
+import { Expirences } from "@/app/expirences";
+import { Projects } from "@/app/projects";
+import { Skills } from "@/app/skills";
 import Header from "@/components/header";
-import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills";
 import { Suspense } from "react";
 import { Toaster } from 'react-hot-toast';
 import { Contact } from "./contact";

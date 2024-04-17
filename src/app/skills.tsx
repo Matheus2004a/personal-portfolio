@@ -1,6 +1,6 @@
 import { supabase } from "@/utils/supabase/server"
 import Image from "next/image"
-import { BadgeDemo } from "./badge"
+import { BadgeDemo } from "../components/badge"
 
 export async function Skills() {
   const { data: skills } = await supabase
@@ -13,7 +13,9 @@ export async function Skills() {
         <BadgeDemo className="w-fit">
           <h2>Habilidades</h2>
         </BadgeDemo>
-        <p>As habilidades, ferramentas e tecnologias nas quais sou realmente bom:</p>
+        <p className="max-w-xs lg:max-w-screen-sm text-center">
+          As habilidades, ferramentas e tecnologias nas quais sou realmente bom:
+        </p>
       </div>
 
       <div className="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">

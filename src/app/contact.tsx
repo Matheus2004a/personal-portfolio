@@ -18,14 +18,14 @@ export function Contact() {
         <BadgeDemo className="w-fit">
           <h2>Contato</h2>
         </BadgeDemo>
-        <p className="max-w-xl text-center">
+        <p className="max-w-xs text-center lg:max-w-screen-sm">
           Entre em contato comigo se estiver procurando um desenvolvedor, tiver alguma demanda ou simplesmente quiser se conectar.
         </p>
       </div>
 
       <Form {...form}>
-        <div className="flex flex-col justify-center items-center gap-5">
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-1/2 space-y-8">
+        <div className="flex flex-col justify-center items-center">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="w-3/4 lg:w-1/2 space-y-8">
             <FormField
               control={form.control}
               name="name"
@@ -108,7 +108,7 @@ export function Contact() {
             <Button
               type="submit"
               disabled={isDisabled}
-              className="disabled:cursor-not-allowed"
+              className="w-full lg:w-1/4"
             >
               {isDisabled && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Enviar

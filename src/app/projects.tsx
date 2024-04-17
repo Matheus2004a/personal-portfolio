@@ -3,8 +3,8 @@
 import { StackLabels, useGitHubAutomatedRepos } from "github-automated-repos";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { BadgeDemo } from "./badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { BadgeDemo } from "../components/badge";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
 
 export function Projects() {
   const projects = useGitHubAutomatedRepos("Matheus2004a", "deploy");
@@ -15,12 +15,12 @@ export function Projects() {
         <BadgeDemo className="w-fit">
           <h2>Projetos</h2>
         </BadgeDemo>
-        <p>Alguns dos projetos notáveis ​​que construí:</p>
+        <p className="max-w-xs lg:max-w-screen-sm text-center">Alguns dos projetos notáveis ​​que construí:</p>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center max-w-screen-xl gap-12">
+      <div className="flex flex-wrap justify-center items-center gap-12">
         {projects.map((project) => (
-          <Card className="w-3/4 dark:bg-slate-800" key={project.id}>
+          <Card className="w-4/5 dark:bg-slate-800" key={project.id}>
             <CardHeader>
               <CardTitle>
                 <Link href={project.html_url} target="_blank">
@@ -49,7 +49,7 @@ export function Projects() {
               {project.homepage && (
                 <Link href={project.homepage} target="_blank">
                   <ExternalLink
-                    className="rounded-lg dark:text-gray-400 dark:hover:bg-gray-900 transition-colors duration-300 w-9 h-9 p-1.5"
+                    className="rounded-lg hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-900 transition-colors duration-300 w-9 h-9 p-1.5"
                   />
                 </Link>
               )}
