@@ -10,7 +10,7 @@ export function Projects() {
   const projects = useGitHubAutomatedRepos("Matheus2004a", "deploy");
 
   return (
-    <section id="work" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
+    <section id="projects" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
       <div className="grid place-items-center gap-4">
         <BadgeDemo className="w-fit">
           <h2>Projetos</h2>
