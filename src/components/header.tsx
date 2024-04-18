@@ -1,5 +1,3 @@
-"use client"
-
 import { NAV_LINKS } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
