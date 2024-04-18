@@ -9,7 +9,7 @@ export async function Expirences() {
     .select('*')
 
   return (
-    <section id="work" className="max-w-5xl lg:max-w-5xl grid gap-12 py-16 md:py-20 2xl:py-24 sm:max-w-lg">
+    <section className="max-w-5xl lg:max-w-5xl grid gap-12 py-16 md:py-20 2xl:py-24 sm:max-w-lg">
       <div className="grid place-items-center gap-4">
         <BadgeDemo className="w-fit">
           <h2>Experiência</h2>
