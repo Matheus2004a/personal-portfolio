@@ -38,6 +38,7 @@ export function AboutMe() {
         width={280}
         height={280}
         className="rounded-lg w-full h-[300px] object-cover lg:w-[280px] lg:h-[280px]"
+        priority
       />
     </section >
   )
