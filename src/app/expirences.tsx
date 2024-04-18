@@ -9,12 +9,12 @@ export async function Expirences() {
     .select('*')
 
   return (
-    <section className="max-w-5xl lg:max-w-5xl grid gap-12 py-16 md:py-20 2xl:py-24 sm:max-w-lg">
+    <section id="expirence" className="max-w-5xl md:max-w-5xl grid gap-12 py-16 md:py-20 2xl:py-24 sm:max-w-lg">
       <div className="grid place-items-center gap-4">
         <BadgeDemo className="w-fit">
           <h2>Experiência</h2>
         </BadgeDemo>
-        <p className="text-center">Aqui está um rápido resumo das minhas experiências mais recentes:</p>
+        <p className="max-w-xs md:max-w-screen-sm text-center">Aqui está um rápido resumo das minhas experiências mais recentes:</p>
       </div>
 
       <div className="flex flex-col flex-wrap justify-center items-center max-w-screen-xl gap-12">

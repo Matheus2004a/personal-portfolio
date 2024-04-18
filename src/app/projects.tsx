@@ -15,7 +15,7 @@ export function Projects() {
         <BadgeDemo className="w-fit">
           <h2>Projetos</h2>
         </BadgeDemo>
-        <p className="max-w-xs lg:max-w-screen-sm text-center">Alguns dos projetos notáveis ​​que construí:</p>
+        <p className="max-w-xs md:max-w-screen-sm text-center">Alguns dos projetos notáveis ​​que construí:</p>
       </div>
 
       <div className="flex flex-wrap justify-center items-center gap-12">

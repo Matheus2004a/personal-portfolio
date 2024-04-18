@@ -13,7 +13,7 @@ export default function Header() {
     )}>
       <Logo width={120} height={37} />
 
-      <nav className="hidden lg:flex gap-12 items-center justify-between">
+      <nav className="hidden md:flex gap-12 items-center justify-between">
         <ul className="flex gap-6">
           {NAV_LINKS.map((link) => (
             <Link

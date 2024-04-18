@@ -13,7 +13,7 @@ export async function Skills() {
         <BadgeDemo className="w-fit">
           <h2>Habilidades</h2>
         </BadgeDemo>
-        <p className="max-w-xs lg:max-w-screen-sm text-center">
+        <p className="max-w-xs md:max-w-screen-sm text-center">
           As habilidades, ferramentas e tecnologias nas quais sou realmente bom:
         </p>
       </div>

@@ -16,7 +16,7 @@ import { SwitchTheme } from "./switch-theme"
 
 export function SheetDemo() {
   return (
-    <div className="lg:hidden">
+    <div className="md:hidden">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline">

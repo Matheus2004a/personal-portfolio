@@ -18,7 +18,7 @@ export function Contact() {
         <BadgeDemo className="w-fit">
           <h2>Contato</h2>
         </BadgeDemo>
-        <p className="max-w-xs text-center lg:max-w-screen-sm">
+        <p className="max-w-xs md:max-w-screen-sm text-center">
           Entre em contato comigo se estiver procurando um desenvolvedor, tiver alguma demanda ou simplesmente quiser se conectar.
         </p>
       </div>
@@ -108,7 +108,7 @@ export function Contact() {
             <Button
               type="submit"
               disabled={isDisabled}
-              className="w-full lg:w-1/4"
+              className="w-full md:w-1/4"
             >
               {isDisabled && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Enviar

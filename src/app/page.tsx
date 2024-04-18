@@ -2,6 +2,7 @@ import { AboutMe } from "@/app/about-me";
 import { Expirences } from "@/app/expirences";
 import { Projects } from "@/app/projects";
 import { Skills } from "@/app/skills";
+import { ButtonBackTop } from "@/components/button-back-top";
 import Header from "@/components/header";
 import { Suspense } from "react";
 import { Toaster } from 'react-hot-toast';
@@ -24,6 +25,8 @@ export default function Home() {
 
         <Projects />
         <Contact />
+
+        <ButtonBackTop />
 
         <Toaster />
       </main>

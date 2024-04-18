@@ -27,7 +27,7 @@ export function Footer() {
         </div>
       </section>
 
-      <p>
+      <p className="text-center">
         Copyright &copy; 2024 | Coded by Matheus Aurélio
       </p>
     </footer>
