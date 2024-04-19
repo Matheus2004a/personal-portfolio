@@ -11,7 +11,7 @@ export default function Header() {
     <header className={cn(
       "fixed z-10 w-full items-center justify-between flex bg-gray/50 backdrop-blur-xl px-10 py-4",
     )}>
-      <Logo width={120} height={37} />
+      <Logo width={40} height={40} />
 
       <nav className="hidden md:flex gap-12 items-center justify-between">
         <ul className="flex gap-6">
