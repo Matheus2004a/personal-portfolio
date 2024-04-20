@@ -25,7 +25,7 @@ export function SheetDemo() {
         </SheetTrigger>
         <SheetContent className="flex flex-col gap-10 dark:bg-black">
           <SheetHeader>
-            <Logo width={100} height={37} />
+            <Logo width={30} height={30} />
           </SheetHeader>
           <nav>
             <ul className="grid gap-4">

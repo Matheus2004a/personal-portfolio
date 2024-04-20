@@ -36,8 +36,8 @@ export async function Expirences() {
             </figure>
 
             <ul>
-              {expirence.description.split("\n").map((text, index) => (
-                <li key={index}>{text}</li>
+              {expirence.description.split("\n").map((text) => (
+                <li key={text}>{text}</li>
               ))}
             </ul>
           </div>

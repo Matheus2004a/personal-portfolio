@@ -34,9 +34,9 @@ export function Projects() {
 
               {project.topics.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-6">
-                  {project.topics.map((icon, index) => (
+                  {project.topics.map((icon) => (
                     <StackLabels
-                      key={index}
+                      key={icon}
                       itemTopics={icon}
                       className="bg-gray-200 rounded-xl px-5 py-1 dark:bg-slate-700"
                     />

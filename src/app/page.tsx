@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import { Toaster } from 'react-hot-toast';
 import { Contact } from "./contact";
 import { Footer } from "./footer";
+import { Metodologies } from "./metodologies";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
 
       <main className="flex flex-col items-center pt-10">
         <AboutMe />
+        <Metodologies />
         <Suspense fallback={<h3>Loading...</h3>}>
           <Skills />
         </Suspense>

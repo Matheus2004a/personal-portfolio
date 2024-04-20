@@ -7,9 +7,9 @@ interface LogoProps {
 
 export function Logo({ width, height }: LogoProps) {
   return (
-    <div>
-      <span className="grid grid-cols-2 items-center gap-1 text-xl uppercase">
-        <Ticket width={width} height={height} />
+    <div className="max-w-20">
+      <span className="flex items-center gap-1 text-xl uppercase">
+        <Ticket width={width} height={height} className="w-auto h-auto" />
         ma&trade;
       </span>
     </div>
