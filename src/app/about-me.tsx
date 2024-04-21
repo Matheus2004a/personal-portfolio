@@ -11,7 +11,7 @@ export function AboutMe() {
       <div className="grid gap-12 sm:gap-8">
         <h1 className="text-2xl font-bold">Apresentação</h1>
         <p>
-          Sou um desenvolvedor frontend (React.js/Next.js) com foco na criação de experiências digitais que sejam rápidas, acessíveis, visualmente atraentes e responsivas. Dependendo da sua demanda posso atuar como fullstack também, pois já realizei amduns trabalhos (freelas) como um.
+          Sou um desenvolvedor frontend (React.js/Next.js) com foco na criação de experiências digitais que sejam rápidas, acessíveis, visualmente atraentes e responsivas. Dependendo da sua demanda posso atuar como fullstack também, pois já realizei alguns trabalhos (freelas) como um.
         </p>
 
         <div className="flex flex-col gap-2">
@@ -40,6 +40,6 @@ export function AboutMe() {
         className="rounded-md w-full sm:max-w-72 h-auto object-cover"
         priority
       />
-    </section >
+    </section>
   )
 }
