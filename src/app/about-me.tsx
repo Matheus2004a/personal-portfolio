@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
-import { MapPin } from "lucide-react"
+import { Github, Linkedin, MapPin } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function AboutMe() {
   return (
@@ -29,6 +30,25 @@ export function AboutMe() {
             </div>
             <p>Disponível para novos projetos</p>
           </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Link href="https://github.com/Matheus2004a" target="_blank">
+            <Github
+              className={cn(
+                "w-9 h-9 hover:bg-gray-200 active:bg-gray-300 rounded-lg p-1.5 transition-colors duration-300",
+                "dark:hover:bg-gray-700 dark:active:bg-gray-800"
+              )}
+            />
+          </Link>
+          <Link href="https://www.linkedin.com/in/matheus-aur%C3%A9lio/" target="_blank">
+            <Linkedin
+              className={cn(
+                "w-9 h-9 hover:bg-gray-200 active:bg-gray-300 rounded-lg p-1.5 transition-colors duration-300",
+                "dark:hover:bg-gray-700 dark:active:bg-gray-800"
+              )}
+            />
+          </Link>
         </div>
       </div>
 
