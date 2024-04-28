@@ -1,6 +1,6 @@
 import { supabase } from "@/utils/supabase/server"
-import Image from "next/image"
 import { BadgeDemo } from "../components/badge"
+import { SkillsList } from "./skills-list"
 
 export async function Skills() {
   const { data: skills } = await supabase
@@ -19,18 +19,7 @@ export async function Skills() {
       </div>
 
       <div className="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">
-        {skills?.map((skill) => (
-          <figure key={skill.id} className="flex flex-col items-center gap-2">
-            <Image
-              src={skill.url_skill}
-              alt={skill.name}
-              width={64}
-              height={64}
-              className="transition-transform duration-300 md:hover:scale-110 cursor-pointer w-16 h-16"
-            />
-            <figcaption className="text-base md:text-lg">{skill.name}</figcaption>
-          </figure>
-        ))}
+        <SkillsList skills={skills ?? []} />
       </div>
     </section>
   )
