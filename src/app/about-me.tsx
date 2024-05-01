@@ -1,6 +1,7 @@
+import { MotionDiv, MotionH2, MotionImg, MotionP } from "@/components/motions"
+import { containerDelay } from "@/components/motions/variants"
 import { cn } from "@/lib/utils"
 import { Github, Linkedin, MapPin } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 
 export function AboutMe() {
@@ -10,12 +11,28 @@ export function AboutMe() {
       "px-8 flex flex-col-reverse place-items-center"
     )}>
       <div className="grid gap-12 sm:gap-8">
-        <h1 className="text-2xl font-bold">Apresentação</h1>
-        <p>
+        <MotionH2
+          variants={containerDelay(0.5)}
+          initial="hidden"
+          animate="visible"
+          className="text-2xl font-bold"
+        >
+          Apresentação
+        </MotionH2>
+        <MotionP
+          variants={containerDelay(1)}
+          initial="hidden"
+          animate="visible"
+        >
           Sou um desenvolvedor frontend (React.js/Next.js) com foco na criação de experiências digitais que sejam rápidas, acessíveis, visualmente atraentes e responsivas. Dependendo da sua demanda posso atuar como fullstack também, pois já realizei alguns trabalhos (freelas) como um.
-        </p>
+        </MotionP>
 
-        <div className="flex flex-col gap-2">
+        <MotionDiv
+          variants={containerDelay(1)}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col gap-2"
+        >
           <figure className="flex items-center gap-2">
             <MapPin className="w-6 h-6" />
             <figcaption>São José dos Campos, Brazil</figcaption>
@@ -30,9 +47,14 @@ export function AboutMe() {
             </div>
             <p>Disponível para novos projetos</p>
           </div>
-        </div>
+        </MotionDiv>
 
-        <div className="flex items-center gap-2">
+        <MotionDiv
+          variants={containerDelay(1.5)}
+          initial="hidden"
+          animate="visible"
+          className="flex items-center gap-2"
+        >
           <Link href="https://github.com/Matheus2004a" target="_blank">
             <Github
               className={cn(
@@ -49,10 +71,19 @@ export function AboutMe() {
               )}
             />
           </Link>
-        </div>
+        </MotionDiv>
       </div>
 
-      <Image
+      <MotionImg
+        variants={{
+          hidden: { opacity: 0, x: 100 },
+          visible: {
+            opacity: 1, x: 0,
+            transition: { duration: 0.5, delay: 1 }
+          }
+        }}
+        initial="hidden"
+        animate="visible"
         src="https://github.com/Matheus2004a.png"
         alt="user-icon"
         width={280}

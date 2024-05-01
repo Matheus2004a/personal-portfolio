@@ -1,3 +1,5 @@
+import { MotionDiv } from "@/components/motions";
+import { containerSections } from "@/components/motions/variants";
 import { formatDate } from "@/utils/formatDate";
 import { supabase } from "@/utils/supabase/server";
 import Image from "next/image";
@@ -10,12 +12,17 @@ export async function Expirences() {
 
   return (
     <section id="expirence" className="max-w-5xl md:max-w-5xl grid gap-12 py-16 md:py-20 2xl:py-24 sm:max-w-lg">
-      <div className="grid place-items-center gap-4">
+      <MotionDiv
+        variants={containerSections(1)}
+        initial="hidden"
+        animate="visible"
+        className="grid place-items-center gap-4"
+      >
         <BadgeDemo className="w-fit">
           <h2>Experiência</h2>
         </BadgeDemo>
         <p className="max-w-xs md:max-w-screen-sm text-center">Aqui está um rápido resumo das minhas experiências mais recentes:</p>
-      </div>
+      </MotionDiv>
 
       <div className="flex flex-col flex-wrap justify-center items-center max-w-screen-xl gap-12">
         {expirences?.map((expirence) => (
