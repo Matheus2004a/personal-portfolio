@@ -1,13 +1,19 @@
 "use client"
 
+import { MotionCard } from "@/components/motions";
+import { useInView } from "framer-motion";
 import { StackLabels, useGitHubAutomatedRepos } from "github-automated-repos";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { useRef } from "react";
 import { BadgeDemo } from "../components/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
+import { CardContent, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
 
 export function Projects() {
   const projects = useGitHubAutomatedRepos("Matheus2004a", "deploy");
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   return (
     <section id="work" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
@@ -18,9 +24,19 @@ export function Projects() {
         <p className="max-w-xs md:max-w-screen-sm text-center">Alguns dos projetos notáveis ​​que construí:</p>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center gap-12">
-        {projects.map((project) => (
-          <Card className="w-4/5 dark:bg-slate-800" key={project.id}>
+      <div className="flex flex-wrap justify-center items-center gap-12" ref={ref}>
+        {projects.map((project, index) => (
+          <MotionCard
+            key={project.id}
+            className="w-4/5 dark:bg-slate-800"
+            variants={{
+              initial: { y: 50, opacity: 0 },
+              animate: { y: 0, opacity: 1 },
+            }}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 0.5, delay: index * 0.4 }}
+          >
             <CardHeader>
               <CardTitle>
                 <Link href={project.html_url} target="_blank">
@@ -54,9 +70,9 @@ export function Projects() {
                 </Link>
               )}
             </CardFooter>
-          </Card>
+          </MotionCard>
         ))}
       </div>
-    </section>
+    </section >
   )
 }

@@ -1,36 +1,43 @@
+"use client"
+
 import { MotionDiv, MotionH2, MotionImg, MotionP } from "@/components/motions"
 import { containerDelay } from "@/components/motions/variants"
 import { cn } from "@/lib/utils"
+import { useInView } from "framer-motion"
 import { Github, Linkedin, MapPin } from "lucide-react"
 import Link from "next/link"
+import { useRef } from "react"
 
 export function AboutMe() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
-    <section id="about" className={cn(
+    <section id="about" ref={ref} className={cn(
       "max-w-5xl w-full md:grid md:grid-cols-2 gap-12 py-16 md:py-20 2xl:py-24",
       "px-8 flex flex-col-reverse place-items-center"
     )}>
       <div className="grid gap-12 sm:gap-8">
         <MotionH2
-          variants={containerDelay(0.5)}
+          variants={containerDelay(0.3)}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
           className="text-2xl font-bold"
         >
           Apresentação
         </MotionH2>
         <MotionP
-          variants={containerDelay(1)}
+          variants={containerDelay(0.5)}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
         >
           Sou um desenvolvedor frontend (React.js/Next.js) com foco na criação de experiências digitais que sejam rápidas, acessíveis, visualmente atraentes e responsivas. Dependendo da sua demanda posso atuar como fullstack também, pois já realizei alguns trabalhos (freelas) como um.
         </MotionP>
 
         <MotionDiv
-          variants={containerDelay(1)}
+          variants={containerDelay(0.7)}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
           className="flex flex-col gap-2"
         >
           <figure className="flex items-center gap-2">
@@ -50,9 +57,9 @@ export function AboutMe() {
         </MotionDiv>
 
         <MotionDiv
-          variants={containerDelay(1.5)}
+          variants={containerDelay(1)}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
           className="flex items-center gap-2"
         >
           <Link href="https://github.com/Matheus2004a" target="_blank">
@@ -83,7 +90,7 @@ export function AboutMe() {
           }
         }}
         initial="hidden"
-        animate="visible"
+        animate={isInView ? "visible" : "hidden"}
         src="https://github.com/Matheus2004a.png"
         alt="user-icon"
         width={280}
