@@ -1,19 +1,15 @@
-export function containerDelay(time: number) {
-  return {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1, x: 0,
-      transition: { duration: 0.5, delay: time }
-    },
-  }
+interface ContainerDelayProps {
+  time: number,
+  axisHidden: { x?: number, y?: number },
+  axisVisible: { x?: number, y?: number }
 }
 
-export function containerSections(time: number) {
+export function containerDelay({ time, axisHidden, axisVisible }: ContainerDelayProps) {
   return {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, x: axisHidden.x ?? 0, y: axisHidden.y ?? 0 },
     visible: {
-      opacity: 1, y: 0,
+      opacity: 1, x: axisVisible.x ?? 0, y: axisVisible.y ?? 0,
       transition: { duration: 0.5, delay: time }
-    }
+    },
   }
 }

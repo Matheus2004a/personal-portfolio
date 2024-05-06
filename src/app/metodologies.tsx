@@ -2,7 +2,7 @@
 
 import { BadgeDemo } from "@/components/badge";
 import { MotionCard, MotionDiv } from "@/components/motions";
-import { containerSections } from "@/components/motions/variants";
+import { containerDelay } from "@/components/motions/variants";
 import {
   CardContent,
   CardDescription,
@@ -22,7 +22,7 @@ export function Metodologies() {
   return (
     <section id="metodologies" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
       <MotionDiv
-        variants={containerSections(1)}
+        variants={containerDelay({ time: 1, axisHidden: { y: 20 }, axisVisible: { y: 0 } })}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         className="grid place-items-center gap-4"
@@ -39,7 +39,7 @@ export function Metodologies() {
             key={metodologie.description}
             className={cn(
               "max-w-[75%] w-full md:max-w-full cursor-pointer",
-              "transition transform ease-in-out duration-500 hover:-translate-y-4 motion-reduce:transition-none motion-reduce:hover:transform-none"
+              "transition transform ease-in-out duration-500 md:hover:-translate-y-4 motion-reduce:transition-none motion-reduce:md:hover:transform-none"
             )}
             variants={{
               hidden: { opacity: 0 },

@@ -1,5 +1,5 @@
 import { MotionDiv } from "@/components/motions";
-import { containerSections } from "@/components/motions/variants";
+import { containerDelay } from "@/components/motions/variants";
 import { formatDate } from "@/utils/formatDate";
 import { supabase } from "@/utils/supabase/server";
 import Image from "next/image";
@@ -13,7 +13,7 @@ export async function Expirences() {
   return (
     <section id="expirence" className="max-w-5xl md:max-w-5xl grid gap-12 py-16 md:py-20 2xl:py-24 sm:max-w-lg">
       <MotionDiv
-        variants={containerSections(1)}
+        variants={containerDelay({ time: 1, axisHidden: { y: 20 }, axisVisible: { y: 0 } })}
         initial="hidden"
         animate="visible"
         className="grid place-items-center gap-4"

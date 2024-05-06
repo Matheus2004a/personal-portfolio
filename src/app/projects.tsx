@@ -1,6 +1,7 @@
 "use client"
 
-import { MotionCard } from "@/components/motions";
+import { MotionCard, MotionDiv } from "@/components/motions";
+import { containerDelay } from "@/components/motions/variants";
 import { useInView } from "framer-motion";
 import { StackLabels, useGitHubAutomatedRepos } from "github-automated-repos";
 import { ExternalLink } from "lucide-react";
@@ -17,12 +18,17 @@ export function Projects() {
 
   return (
     <section id="work" className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
-      <div className="grid place-items-center gap-4">
+      <MotionDiv
+        variants={containerDelay({ time: 1, axisHidden: { y: 20 }, axisVisible: { y: 0 } })}
+        initial="hidden"
+        animate="visible"
+        className="grid place-items-center gap-4"
+      >
         <BadgeDemo className="w-fit">
           <h2>Projetos</h2>
         </BadgeDemo>
         <p className="max-w-xs md:max-w-screen-sm text-center">Alguns dos projetos notáveis ​​que construí:</p>
-      </div>
+      </MotionDiv>
 
       <div className="flex flex-wrap justify-center items-center gap-12" ref={ref}>
         {projects.map((project, index) => (

@@ -2,6 +2,7 @@
 
 import { MotionDiv, MotionH2, MotionImg, MotionP } from "@/components/motions"
 import { containerDelay } from "@/components/motions/variants"
+import useWindow from "@/hooks/useWindow"
 import { cn } from "@/lib/utils"
 import { useInView } from "framer-motion"
 import { Github, Linkedin, MapPin } from "lucide-react"
@@ -11,6 +12,7 @@ import { useRef } from "react"
 export function AboutMe() {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const isDesktop = useWindow()
 
   return (
     <section id="about" ref={ref} className={cn(
@@ -19,7 +21,11 @@ export function AboutMe() {
     )}>
       <div className="grid gap-12 sm:gap-8">
         <MotionH2
-          variants={containerDelay(0.3)}
+          variants={containerDelay({
+            time: 0.3,
+            axisHidden: isDesktop ? { x: -100 } : { y: -100 },
+            axisVisible: isDesktop ? { x: 0 } : { y: 0 }
+          })}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="text-2xl font-bold"
@@ -27,7 +33,11 @@ export function AboutMe() {
           Apresentação
         </MotionH2>
         <MotionP
-          variants={containerDelay(0.5)}
+          variants={containerDelay({
+            time: 0.5,
+            axisHidden: isDesktop ? { x: -100 } : { y: -100 },
+            axisVisible: isDesktop ? { x: 0 } : { y: 0 }
+          })}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
@@ -35,7 +45,11 @@ export function AboutMe() {
         </MotionP>
 
         <MotionDiv
-          variants={containerDelay(0.7)}
+          variants={containerDelay({
+            time: 0.7,
+            axisHidden: isDesktop ? { x: -100 } : { y: -100 },
+            axisVisible: isDesktop ? { x: 0 } : { y: 0 }
+          })}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="flex flex-col gap-2"
@@ -57,7 +71,11 @@ export function AboutMe() {
         </MotionDiv>
 
         <MotionDiv
-          variants={containerDelay(1)}
+          variants={containerDelay({
+            time: 1,
+            axisHidden: isDesktop ? { x: -100 } : { y: -100 },
+            axisVisible: isDesktop ? { x: 0 } : { y: 0 }
+          })}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="flex items-center gap-2"
@@ -82,13 +100,11 @@ export function AboutMe() {
       </div>
 
       <MotionImg
-        variants={{
-          hidden: { opacity: 0, x: 100 },
-          visible: {
-            opacity: 1, x: 0,
-            transition: { duration: 0.5, delay: 1 }
-          }
-        }}
+        variants={containerDelay({
+          time: 1,
+          axisHidden: isDesktop ? { x: 100 } : { y: 100 },
+          axisVisible: isDesktop ? { x: 0 } : { y: 0 }
+        })}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         src="https://github.com/Matheus2004a.png"
@@ -97,6 +113,7 @@ export function AboutMe() {
         height={280}
         className="rounded-md w-full sm:max-w-72 h-auto object-cover"
         priority
+        quality={100}
       />
     </section>
   )

@@ -1,5 +1,5 @@
 import { MotionDiv } from "@/components/motions"
-import { containerSections } from "@/components/motions/variants"
+import { containerDelay } from "@/components/motions/variants"
 import { supabase } from "@/utils/supabase/server"
 import { BadgeDemo } from "../components/badge"
 import { SkillsList } from "./skills-list"
@@ -12,7 +12,7 @@ export async function Skills() {
   return (
     <section className="max-w-5xl w-full grid gap-12 py-16 md:py-20 2xl:py-24">
       <MotionDiv
-        variants={containerSections(1)}
+        variants={containerDelay({ time: 1, axisHidden: { y: 20 }, axisVisible: { y: 0 } })}
         initial="hidden"
         animate="visible"
         className="grid place-items-center gap-4"
